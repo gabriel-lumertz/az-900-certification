@@ -1,0 +1,21 @@
+# Resumo
+
+Neste módulo, você aprendeu sobre alguns dos serviços de  computação e rede que fazem parte do Azure. Você aprendeu sobre máquinas virtuais e as diferentes opções associadas a elas (como conjuntos de  dimensionamento de máquinas virtuais e conjuntos de disponibilidade de  máquinas virtuais). Você também foi apresentado a alguns dos recursos de rede, incluindo rede virtual, ExpressRoute e redes virtuais privadas.
+
+## Objetivos de aprendizagem
+
+Agora você deve ser capaz de:
+
+- Compare tipos de computação, incluindo instâncias de contêiner, máquinas virtuais e funções.
+- Descreva as opções de máquina virtual, incluindo máquinas virtuais  (VMs), conjuntos de dimensionamento de máquinas virtuais, conjuntos de  disponibilidade de máquinas virtuais e Área de Trabalho Virtual do  Azure.
+- Descrever os recursos necessários para máquinas virtuais.
+- Descreva as opções de hospedagem de aplicativos, incluindo aplicativos Web do Azure, contêineres e máquinas virtuais.
+- Descreva a rede virtual, incluindo a finalidade das Redes Virtuais  do Azure, sub-redes virtuais do Azure, emparelhamento, DNS do Azure,  Gateway de VPN e ExpressRoute.
+- Definir pontos de extremidade públicos e privados.
+
+## Recursos adicionais
+
+Os recursos adicionais a seguir destinam-se a fornecer mais  informações sobre tópicos neste módulo ou sobre tópicos adicionais  relacionados a este módulo.
+
+- [Hospedar um aplicativo Web com o Serviço de Aplicativo do Azure](https://learn.microsoft.com/pt-br/learn/modules/host-a-web-app-with-azure-app-service/) é um módulo do Microsoft Learn que explora o processo de hospedagem de um aplicativo Web no Azure.
+- [Introdução aos serviços básicos de rede do Azure](https://learn.microsoft.com/pt-br/learn/paths/intro-to-azure-network-foundation-services/) é um curso do Microsoft Learn que fornece maior entendimento e informações sobre a rede com o Azure.

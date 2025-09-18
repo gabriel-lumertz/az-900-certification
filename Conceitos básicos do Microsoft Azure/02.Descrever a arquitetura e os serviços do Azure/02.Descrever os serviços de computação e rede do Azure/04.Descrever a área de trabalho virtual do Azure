@@ -1,0 +1,17 @@
+# Descrever a área de trabalho virtual do Azure
+
+Outro tipo de máquina virtual é a Área de Trabalho Virtual do  Azure. A Área de Trabalho Virtual do Azure é um serviço de virtualização de aplicativos e área de trabalho que é executado na nuvem. Ele permite que você use uma versão hospedada na nuvem do Windows de qualquer  local. A Área de Trabalho Virtual do Azure funciona em dispositivos e  sistemas operacionais e funciona com aplicativos que você pode usar para acessar áreas de trabalho remotas ou a maioria dos navegadores  modernos.
+
+O vídeo a seguir fornece uma visão geral da Área de Trabalho Virtual do Azure:
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=04978efb-d8e5-4352-bcb4-45399a988a69&amp;locale=pt-br&amp;embedUrl=%2Ftraining%2Fmodules%2Fdescribe-azure-compute-networking-services%2F4-virtual-desktop" frameborder="0" allowfullscreen="true" data-linktype="external" title="Player de vídeo"></iframe>
+
+## Aumentar a segurança
+
+A Área de Trabalho Virtual do Azure fornece gerenciamento de  segurança centralizado para áreas de trabalho dos usuários com a ID do  Microsoft Entra. Você pode habilitar a autenticação multifator para  proteger as entradas do usuário. Você também pode proteger o acesso aos  dados atribuindo RBACs (controles de acesso baseados em função)  granulares aos usuários.
+
+Com a Área de Trabalho Virtual do Azure, os dados e os aplicativos  são separados do hardware local. A área de trabalho real e os  aplicativos estão em execução na nuvem, o que significa que o risco de  dados confidenciais serem deixados em um dispositivo pessoal é reduzido. Além disso, as sessões de usuário são isoladas em ambientes de sessão  única e de várias sessões.
+
+## Implantação multissessão do Windows 10 ou Windows 11
+
+A Área de Trabalho Virtual do Azure permite que você use o Windows 10 ou o Windows 11 Enterprise de várias sessões, o único sistema  operacional baseado em cliente do Windows que permite vários usuários  simultâneos em uma única VM. A Área de Trabalho Virtual do Azure também  fornece uma experiência mais consistente com suporte a aplicativos mais  amplos em comparação com sistemas operacionais baseados no Windows  Server.

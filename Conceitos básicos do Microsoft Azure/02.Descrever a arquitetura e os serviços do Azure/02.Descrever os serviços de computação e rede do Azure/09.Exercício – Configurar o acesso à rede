@@ -1,0 +1,229 @@
+# Exercício – Configurar o acesso à rede
+
+Neste exercício, você configura o acesso à VM (máquina virtual) criada anteriormente neste módulo.
+
+> [!IMPORTANT]
+>
+> A VM para este exercício foi criada anteriormente neste módulo. Se  você excluiu a VM ou o grupo de recursos criado na unidade 3, será  necessário refazer o exercício anterior (**Exercício – Criar uma máquina virtual do Azure**).
+>
+
+No momento, a VM na qual você criou e instalou o Nginx durante o  exercício anterior não está acessível pela Internet. Neste exercício,  você criará um grupo de segurança de rede que altera isso permitindo o  acesso HTTP de entrada na porta 80.
+
+ Observação
+
+É importante que você esteja na versão BASH do Cloud Shell para alguns dos comandos neste exercício. Você pode usar o botão **Alternar para...** se estiver no modo powershell no momento.
+
+## Tarefa 1: acessar seu servidor Web
+
+Neste procedimento, você obtém o endereço IP da VM e tenta acessar a home page do servidor Web.
+
+1.  Execute o seguinte comando `az vm list-ip-addresses` para obter o endereço IP da VM e armazenar o resultado como uma variável Bash:
+
+Bash:
+
+```bash
+IPADDRESS="$(az vm list-ip-addresses \
+  --resource-group "IntroAzureRG" \
+  --name my-vm \
+  --query "[].virtualMachine.network.publicIpAddresses[*].ipAddress" \
+  --output tsv)"    
+```
+
+
+
+2.  Execute o seguinte comando de `curl` para baixar a home page:
+
+Bash:
+
+```bash
+curl --connect-timeout 5 http://$IPADDRESS
+```
+
+O argumento `--connect-timeout` especifica para permitir  até cinco segundos para que a conexão ocorra. Após cinco segundos, você  verá uma mensagem de erro afirmando que o tempo limite da conexão foi  atingido:
+
+Saída:
+
+```output
+curl: (28) Connection timed out after 5001 milliseconds
+```
+
+Essa mensagem significa que a VM não estava acessível dentro do período de tempo limite.
+
+3.  Como uma etapa opcional, tente acessar o servidor Web em um navegador:
+
+​	a. Execute o seguinte para imprimir o endereço IP da VM no console:
+
+​	Bash:
+
+      ```
+      echo $IPADDRESS
+      ```
+
+​	Você verá um endereço IP, por exemplo, *23.102.42.235*.
+
+​	b. Copie o endereço IP que você vê para a área de transferência.
+
+​	c. Abra uma nova guia do navegador e navegue até o servidor Web.  Após alguns instantes, você verá que a conexão não está acontecendo. Se  você aguardar o tempo limite do navegador, verá algo assim:
+
+​                            ![Captura de tela de um navegador da Web mostrando uma mensagem de erro que diz que a conexão atingiu o tempo limite.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-compute-networking-services/media/browser-request-timeout-d7cc0e02.png)                                        
+
+​	d. Deixe esta guia do navegador aberta para uso posterior.
+
+## Tarefa 2: listar as regras de grupo de segurança de rede atuais
+
+O servidor Web não estava acessível. Para descobrir o motivo, vamos examinar suas regras de NSG atuais.
+
+1.  Execute o este comando `az network nsg list` para listar os grupos de segurança de rede que estão associados à sua VM:
+
+CLI do Azure:	
+
+```azurecli
+az network nsg list \
+  --resource-group "IntroAzureRG" \
+  --query '[].name' \
+  --output tsv    
+```
+
+Você verá esta saída:
+
+Saída:
+
+```output
+my-vmNSG
+```
+
+Cada VM no Azure é associada a pelo menos um grupo de segurança de rede. Neste caso, o Azure criou um NSG para você chamado *my-vmNSG*.
+
+
+
+2.  Execute o seguinte comando `az network nsg rule list` para listar as regras associadas ao NSG chamado *my-vmNSG*:
+
+CLI do Azure:
+
+```azurecli
+az network nsg rule list \
+  --resource-group "IntroAzureRG" \
+  --nsg-name my-vmNSG    
+```
+
+Você verá um bloco grande de texto no formato JSON na saída. Na  próxima etapa, você executará um comando semelhante que facilita a  leitura dessa saída.
+
+
+
+3.  Execute o comando `az network nsg rule list` uma segunda vez. Dessa vez, use o argumento `--query` para recuperar apenas o nome, a prioridade, as portas afetadas e o acesso (**Permitir** ou **Negar**) de cada regra. O argumento `--output` formata a saída como uma tabela para facilitar a leitura.
+
+CLI do Azure:
+
+```azurecli
+az network nsg rule list \
+  --resource-group "IntroAzureRG" \
+  --nsg-name my-vmNSG \
+  --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' \
+  --output table    
+```
+
+Você verá esta saída:
+
+Saída:
+
+```output
+   Name              Priority    Port    Access
+   -----------------  ----------  ------  --------
+   default-allow-ssh  1000        22      Allow
+```
+
+   Você vê a regra padrão, *default-allow-ssh*. Essa regra  permite conexões de entrada na porta 22 (SSH). O SSH (Secure Shell) é um protocolo usado no Linux para permitir que os administradores acessem o sistema remotamente. A prioridade dessa regra é 1.000. As regras são  processadas em ordem de prioridade, sendo os números menores processados antes dos números maiores.
+
+Por padrão, o NSG de uma VM Linux permite o acesso à rede somente na  porta 22. Essa porta permite que os administradores acessem o sistema.  Você também precisa permitir conexões de entrada na porta 80, que  permite acesso via HTTP.
+
+## Tarefa 3: criar a regra de segurança de rede
+
+Aqui, você cria uma regra de segurança de rede que permite o acesso de entrada na porta 80 (HTTP).
+
+1.  Execute o seguinte comando `az network nsg rule create` para criar uma regra chamada *allow-http* que permite o acesso de entrada na porta 80:
+
+   
+   
+   CLI do Azure:
+
+```azurecli
+az network nsg rule create \
+  --resource-group "IntroAzureRG" \
+  --nsg-name my-vmNSG \
+  --name allow-http \
+  --protocol tcp \
+  --priority 100 \
+  --destination-port-range 80 \
+  --access Allow    
+```
+
+Para fins de aprendizado, aqui você define a prioridade como 100.  Neste caso, a prioridade não importa. Você precisaria considerar a  prioridade se estivesse sobrepondo intervalos de porta.
+
+
+
+2.  Para verificar a configuração, execute `az network nsg rule list` para ver a lista atualizada de regras:
+
+CLI do Azure:
+
+```azurecli
+az network nsg rule list \
+  --resource-group "IntroAzureRG" \
+  --nsg-name my-vmNSG \
+  --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' \
+  --output table    
+```
+
+Você vê tanto a regra *default-allow-ssh* quanto sua nova regra, *allow-http*:
+
+Saída:
+
+```output
+   Name              Priority    Port    Access
+   -----------------  ----------  ------  --------
+   default-allow-ssh  1000        22      Allow
+   allow-http          100        80      Allow    
+```
+
+## Tarefa 4: acessar seu servidor Web novamente
+
+Agora que você configurou o acesso à rede para a porta 80, vamos tentar acessar o servidor Web uma segunda vez.
+
+> [!Note]
+>
+> Depois de atualizar o NSG, poderá levar alguns instantes até que as  regras atualizadas se propaguem. Tente novamente a próxima etapa, com  pausas entre tentativas, até obter os resultados desejados.
+>
+
+
+
+1.  Execute o mesmo comando `curl` executado anteriormente:
+
+   Bash:
+
+```bash
+curl --connect-timeout 5 http://$IPADDRESS
+```
+
+Você verá esta resposta:
+
+HTML 	
+
+```html
+   <html><body><h2>Welcome to Azure! My name is my-vm.</h2></body></html>
+```
+
+
+
+2.  Como uma etapa opcional, atualize a guia do navegador que aponta para o servidor Web. Você verá a home page:
+
+   ​                            ![Uma captura de tela de um navegador da Web mostrando a home page do servidor Web. A home page exibe uma mensagem de boas-vindas.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-compute-networking-services/media/browser-request-successful-df21c6f1.png)                                        
+
+Parabéns. Na prática, você pode criar um grupo de segurança de rede  autônomo que inclui as regras de acesso de rede de entrada e saída  necessárias. Se você tiver várias VMs com a mesma finalidade, poderá  atribuir essa NSG a cada VM no momento em que criá-la. Essa técnica  permite controlar o acesso à rede para várias VMs sob um único conjunto  central de regras.
+
+Você concluiu este exercício e todos os exercícios deste módulo. Para limpar o ambiente do Azure e evitar deixar as VMs em execução quando  não estiverem em uso, exclua o grupo **de recursos IntroAzureRG** .
+
+## Limpar
+
+1. Na home page do Azure, nos serviços do Azure, selecione **Grupos de recursos**.
+2. Selecione o grupo **de recursos IntroAzureRG** .
+3. Selecione **Excluir grupo de recursos**.
+4. Insira `IntroAzureRG` para confirmar a exclusão do grupo de recursos e selecione excluir.

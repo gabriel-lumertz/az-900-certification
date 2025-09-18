@@ -1,0 +1,75 @@
+# Exercício – criar uma máquina virtual do Azure
+
+Neste exercício, crie uma VM (máquina virtual) do Azure e instale um servidor Web (Nginx).
+
+Você pode usar o portal do Azure, a CLI do Azure ou um modelo do ARM (Azure Resource Manager).
+
+Neste caso, você usará a CLI do Azure.
+
+> Importante
+>
+> Este exercício criará uma VM que será usada em um exercício posterior dentro deste módulo. Para evitar deixar uma VM em execução por um longo período de tempo, é recomendável que você conclua o módulo completo em  uma sessão.
+
+## Tarefa 1: Criar um grupo de recursos
+
+1. Faça login no portal do Azure .
+
+2. Selecione o ícone do Azure Cloud Shell para abrir o Cloud Shell.
+
+3. Na CLI do Azure, crie um grupo de recursos chamado **IntroAzureRG**.
+
+CLI do Azure:
+
+```azurecli
+az group create --name IntroAzureRG --location eastus
+```
+
+## Tarefa 2: criar uma máquina virtual do Linux
+
+1. Use o seguinte comando da CLI do Azure para criar uma VM do Linux.
+
+2. No Cloud Shell, execute o comando `az vm create` a seguir para criar uma VM do Linux:
+
+CLI do Azure:
+
+   ```azurecli
+   az vm create \
+     --resource-group "IntroAzureRG" \
+     --name my-vm \
+     --size Standard_D2s_v5 \
+     --public-ip-sku Standard \
+     --image Ubuntu2204 \
+     --admin-username azureuser \
+     --generate-ssh-keys    
+   ```
+
+   Sua VM leva alguns minutos para ser exibida. Você nomeou a VM como **my-vm**. Use esse nome para se referir à VM em etapas posteriores.
+
+## Tarefa 3: instalar o Nginx
+
+Depois que a VM for criada, você usará uma extensão de script  personalizado para instalar o Nginx. A Extensão de Script Personalizado é uma maneira fácil de baixar e executar scripts em suas VMs do Azure.  Ela é apenas uma das muitas maneiras de configurar o sistema depois que a VM está em funcionamento.
+
+1. Execute este comando `az vm extension set` para configurar o Nginx em sua VM:
+
+CLI do Azure:
+
+   ```azurecli
+   az vm extension set \
+     --resource-group "IntroAzureRG" \
+     --vm-name my-vm \
+     --name customScript \
+     --publisher Microsoft.Azure.Extensions \
+     --version 2.1 \
+     --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
+     --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'    
+   ```
+
+   Esse comando usa a Extensão de Script Personalizado para executar um  script do Bash em sua VM. O script é armazenado no GitHub. Enquanto o  comando é executado, você pode [examinar o script do Bash](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh) em uma guia separada no navegador. Para resumir, o script:
+
+   1. Executa `apt-get update` para baixar as informações mais  recentes do pacote da Internet. Esta etapa ajuda a garantir que o  próximo comando possa localizar a versão mais recente do pacote Nginx.
+   2. Instala o Nginx.
+   3. Define a home page, */var/www/html/index.html*, para imprimir uma mensagem de boas-vindas que inclui o nome de host da VM.
+
+## Continuar
+
+Este exercício está concluído por enquanto. Você usará essa VM mais adiante neste módulo.

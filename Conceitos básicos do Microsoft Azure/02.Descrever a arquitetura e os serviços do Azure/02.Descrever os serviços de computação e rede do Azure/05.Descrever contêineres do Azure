@@ -1,0 +1,31 @@
+# Descrever contêineres do Azure
+
+Embora as máquinas virtuais sejam uma excelente maneira de  reduzir os custos em comparação com os investimentos necessários para o  hardware físico, elas ainda estão limitadas a um sistema operacional por máquina virtual. Se você quer executar várias instâncias de um  aplicativo em um só computador host, os contêineres são uma ótima opção.
+
+## O que são contêineres?
+
+Contêineres são um ambiente de virtualização. Assim como a execução  de várias máquinas virtuais em um só host físico, você pode executar  vários contêineres em apenas um host físico ou virtual. Diferentemente  das máquinas virtuais, você não gerencia o sistema operacional para um  contêiner. Máquinas virtuais parecem ser uma instância de um sistema  operacional que você pode gerenciar e ao qual pode se conectar. Os  contêineres são leves e projetados para serem criados, dimensionados e  interrompidos dinamicamente. É possível criar e implantar máquinas  virtuais à medida que a demanda do aplicativo aumenta, mas os  contêineres são um método mais leve e ágil. Os contêineres foram  projetados para permitir que você responda às alterações sob demanda.  Com contêineres, você pode reiniciar rapidamente se houver uma falha ou  de uma interrupção de hardware. Um dos mecanismos de contêiner mais  populares é o Docker, e o Azure é compatível com o Docker.
+
+## Comparar máquinas virtuais e contêineres
+
+O seguinte vídeo destaca várias diferenças importantes entre máquinas virtuais e contêineres:
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=7aa48d3f-4304-4a18-9861-eaf9d4bebd26&amp;locale=pt-br&amp;embedUrl=%2Ftraining%2Fmodules%2Fdescribe-azure-compute-networking-services%2F5-containers" frameborder="0" allowfullscreen="true" data-linktype="external" title="Player de vídeo"></iframe>
+
+### Instâncias de Contêiner do Azure
+
+As Instâncias de Contêiner do Azure oferecem a maneira mais rápida e  simples de executar um contêiner no Azure, sem a necessidade de  gerenciar máquinas virtuais nem adotar serviços adicionais. Instâncias  de Contêiner do Azure são uma oferta de PaaS (plataforma como serviço).  As Instâncias de Contêiner do Azure permitem que você carregue seus  contêineres e, a seguir, o serviço executa os contêineres para você.
+
+### Aplicativos de Contêiner do Azure
+
+Os Aplicativos de Contêiner do Azure são semelhantes, em muitos  aspectos, a uma instância de contêiner. Eles permitem que você comece a  trabalhar imediatamente, removem a parte de gerenciamento de contêineres e são uma oferta de PaaS. Os Aplicativos de Contêiner têm benefícios  extras, como a capacidade de incorporar balanceamento de carga e  colocação em escala. Essas outras funções permitem que você seja mais  flexível em seu design.
+
+### Serviço de Kubernetes do Azure
+
+O Serviço de Kubernetes do Azure (AKS) é um serviço de orquestração  de contêiner. Um serviço de orquestração gerencia o ciclo de vida dos  contêineres. Quando você está implantando uma frota de contêineres, o  AKS pode tornar o gerenciamento de frota mais simples e eficiente.
+
+### Usar contêineres em suas soluções
+
+Contêineres geralmente são usados para criar soluções que utilizam  uma arquitetura de microsserviço. Essa arquitetura é onde você divide as soluções em partes menores e independentes. Por exemplo, você pode  dividir um site em um contêiner que hospeda o front-end, outro que  hospeda o back-end e um terceiro para o armazenamento. Essa divisão  permite separar as partes do aplicativo em seções lógicas que podem ser  mantidas, dimensionadas ou atualizadas de forma independente.
+
+Imagine que o back-end do seu site atinja a capacidade máxima, mas o  front-end e o armazenamento não estejam sob pressão. Com os contêineres, você pode ampliar o back-end separadamente para aprimorar o desempenho. Se algo exigisse tal alteração, você também poderia optar por alterar o serviço de armazenamento ou modificar o front-end sem afetar nenhum dos outros componentes.

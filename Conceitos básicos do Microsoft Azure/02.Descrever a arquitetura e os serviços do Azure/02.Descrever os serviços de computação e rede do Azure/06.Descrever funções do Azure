@@ -1,0 +1,19 @@
+# Descrever funções do Azure
+
+O Azure Functions é uma opção de computação sem servidor  controlada por eventos que não requer a manutenção de máquinas virtuais  ou contêineres. Se você criar um aplicativo usando VMs ou contêineres,  esses recursos precisarão estar "em execução" para que seu aplicativo  funcione. Com o Azure Functions, um evento desperta a função, reduzindo a necessidade de manter os recursos provisionados quando não há eventos.
+
+## Computação sem servidor no Azure
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=bd90a678-3c03-4e0f-9470-f6f0626373e0&amp;locale=pt-br&amp;embedUrl=%2Ftraining%2Fmodules%2Fdescribe-azure-compute-networking-services%2F6-functions" frameborder="0" allowfullscreen="true" data-linktype="external" title="Player de vídeo"></iframe>
+
+## Benefícios do Azure Functions
+
+Usar o Azure Functions é ideal quando você está preocupado apenas com o código que executa o serviço, e não com a plataforma ou a  infraestrutura subjacente. As funções costumam ser usadas quando você  precisa executar um trabalho em resposta a um evento (geralmente por  meio de uma solicitação REST), um temporizador ou uma mensagem de outro  serviço do Azure e quando esse trabalho pode ser concluído dentro de  segundos.
+
+As funções são dimensionadas automaticamente com base na demanda, portanto, podem ser uma boa opção quando a demanda é variável.
+
+O Azure Functions executa seu código quando ele é acionado e desaloca automaticamente os recursos quando a função é concluída. Nesse modelo, o Azure cobra apenas pelo tempo de CPU usado durante a execução da  função.
+
+As funções podem ser sem estado ou com estado. Quando eles são sem  estado (o padrão), eles se comportam como se fossem reiniciados sempre  que respondem a um evento. Quando são com estado (chamadas de Durable  Functions), um contexto é passado pela função para acompanhar a  atividade anterior.
+
+As funções são um componente chave da computação sem servidor. Elas  também são uma plataforma de computação geral para executar qualquer  tipo de código. Se as necessidades do aplicativo do desenvolvedor forem  alteradas, você poderá implantar o projeto em um ambiente que não seja  sem servidor. Essa flexibilidade permite gerenciar o dimensionamento,  executar em redes virtuais e até mesmo isolar completamente as funções.

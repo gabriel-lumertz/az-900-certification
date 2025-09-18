@@ -1,0 +1,18 @@
+# Introdução
+
+Este módulo apresenta os serviços de computação e rede do Azure. Você aprende sobre três das opções de computação (máquinas virtuais, contêineres e funções do Azure). Você também aprende sobre alguns dos recursos de rede, como redes virtuais do Azure, DNS do Azure e Azure ExpressRoute.
+Objetivos do aprendizado
+
+## Depois de concluir este módulo, você poderá:
+
+* Comparar tipos de computação, incluindo instâncias de contêiner, máquinas virtuais e funções.
+
+* Descrever opções de máquina virtual, incluindo VMs (máquinas virtuais), conjuntos de dimensionamento de máquinas virtuais, conjuntos de disponibilidade de máquinas virtuais e Área de Trabalho Virtual do Azure.
+
+* Descrever os recursos necessários para máquinas virtuais.
+
+* Descrever as opções de hospedagem de aplicativos, incluindo Aplicativos Web, contêineres e máquinas virtuais do Azure.
+
+* Descrever a rede virtual, incluindo a finalidade das Redes Virtuais do Azure, sub-redes virtuais do Azure, emparelhamento, DNS do Azure, Gateway de VPN e ExpressRoute.
+
+* Definir pontos de extremidade públicos e privados.
