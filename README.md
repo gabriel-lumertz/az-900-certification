@@ -1,0 +1,38 @@
+# 📘 Treinamento AZ-900 – Fundamentos do Microsoft Azure
+
+Este repositório contém conteúdo teórico desenvolvido ao longo do treinamento para a certificação **AZ-900: Microsoft Azure Fundamentals**.
+
+------
+
+## 📑 Visão Geral do Treinamento
+
+O curso fornece conhecimento de **nível fundamental** sobre:
+
+- Conceitos de computação em nuvem
+- Principais serviços do **Microsoft Azure**
+- Recursos de gerenciamento e governança
+- Ferramentas para administração e monitoramento
+
+O conteúdo é estruturado para dar uma visão clara e prática do ecossistema Azure, permitindo uma base sólida para estudos mais avançados.
+
+------
+
+## ✅ Objetivos de Aprendizagem
+
+Ao final do treinamento, você será capaz de:
+
+- Explicar os **princípios básicos da nuvem**
+- Descrever os **principais serviços do Azure**
+- Entender os modelos de **responsabilidade compartilhada**
+- Compreender os recursos de **governança, segurança e compliance**
+- Utilizar o **portal do Azure** e a **CLI** para criar e gerenciar recursos
+
+------
+
+## 📌 Preparação para a Certificação
+
+Este material é um **guia de estudo complementar** para a certificação **AZ-900**.
+Para informações oficiais sobre o exame, acesse:
+👉 [Página oficial do Exame AZ-900](https://learn.microsoft.com/certifications/exams/az-900)
+
+------
