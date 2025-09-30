@@ -1,0 +1,26 @@
+# Identificar as opções de movimentação de arquivos do Azure
+
+Além da migração em larga escala usando serviços como Migrações  para Azure e Azure Data Box, o Azure também tem ferramentas projetadas  para ajudar você a mover ou interagir com arquivos individuais ou grupos de arquivos pequenos. Entre essas ferramentas estão AzCopy, Gerenciador de Armazenamento do Azure e Sincronização de Arquivos do Azure.
+
+## AzCopy
+
+O AzCopy é um utilitário de linha de comando que você pode usar para  copiar blobs ou arquivos de/para uma conta de armazenamento. Com o  AzCopy, você pode carregar arquivos, baixar arquivos, copiar arquivos  entre contas de armazenamento e até mesmo sincronizar arquivos. O AzCopy pode até mesmo ser configurado para trabalhar com outros provedores de  nuvem para ajudar a mover arquivos entre nuvens.
+
+> [!IMPORTANT]
+>
+> A sincronização de blobs ou arquivos com o AzCopy é uma sincronização de apenas uma direção. Quando você sincroniza, designa a origem e o  destino, e o AzCopy copiará arquivos ou blobs nessa direção. Ele não  sincroniza bidirecionalmente com base em carimbos de data/hora ou outros metadados.
+
+## Gerenciador de Armazenamento do Azure
+
+O Gerenciador de Armazenamento do Azure é um aplicativo autônomo que  fornece uma interface gráfica para gerenciar arquivos e blobs em sua  Conta do Armazenamento do Azure. Ele funciona em sistemas operacionais  Windows, macOS e Linux e usa o AzCopy no back-end para executar todas as tarefas de gerenciamento de arquivos e blobs. Com o Gerenciador de  Armazenamento, você pode carregar no Azure, baixar do Azure ou mover  entre contas de armazenamento.
+
+## Sincronização de Arquivos do Azure
+
+A Sincronização de Arquivos do Azure é uma ferramenta que permite  centralizar seus compartilhamentos de arquivos no serviço Arquivos do  Azure e manter a flexibilidade, o desempenho e a compatibilidade de um  servidor de arquivos do Windows. É quase como transformar o servidor de  arquivos do Windows em uma rede de distribuição de conteúdo em  miniatura. Depois de instalar a Sincronização de Arquivos do Azure no  seu servidor Windows local, ele permanecerá automaticamente sincronizado bidirecionalmente com seus arquivos no Azure.
+
+Com a Sincronização de Arquivos do Azure, você pode:
+
+- Usar qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS.
+- Ter tantos caches quantos precisar em todo o mundo.
+- Substituir um servidor local com falha instalando a Sincronização de Arquivos do Azure em um novo servidor no mesmo datacenter.
+- Configurar a camada de nuvem para que os arquivos acessados com mais frequência sejam replicados localmente, enquanto os arquivos acessados  com pouca frequência sejam mantidos na nuvem até que sejam solicitados.

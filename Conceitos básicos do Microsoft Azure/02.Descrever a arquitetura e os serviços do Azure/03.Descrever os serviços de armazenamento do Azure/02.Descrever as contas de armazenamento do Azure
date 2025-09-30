@@ -1,0 +1,46 @@
+# Descrever as contas de armazenamento do Azure
+
+O vídeo a seguir apresenta os diferentes serviços que devem estar disponíveis com o Armazenamento do Microsoft Azure.
+
+<iframe src="https://learn-video.azurefd.net/vod/player?id=477e6b92-9bc6-425d-90fe-2468ab8ab0f1&amp;locale=pt-br&amp;embedUrl=%2Ftraining%2Fmodules%2Fdescribe-azure-storage-services%2F2-accounts" frameborder="0" allowfullscreen="true" data-linktype="external" title="Player de vídeo"></iframe>
+
+Uma conta de armazenamento fornece um namespace exclusivo para os  dados do Armazenamento do Azure que podem ser acessados de qualquer  lugar do mundo por HTTP ou HTTPS. Os dados nesta conta são seguros,  altamente disponíveis, duráveis e maciçamente escalonáveis.
+
+Ao criar uma conta de armazenamento, você começará escolhendo o tipo  da conta de armazenamento. O tipo de conta determina os serviços de  armazenamento e as opções de redundância e tem impacto nos casos de uso. Veja abaixo uma lista de opções de redundância que serão abordadas  posteriormente neste módulo:
+
+- LRS (armazenamento com redundância local)
+- Armazenamento com redundância geográfica (GRS)
+- RA-GRS (armazenamento com redundância geográfica com acesso de leitura)
+- ZRS (armazenamento com redundância de zona)
+- Armazenamento com redundância de zona geográfica (GZRS)
+- RA-GZRS (armazenamento com redundância de zona geográfica com acesso de leitura)
+
+ 
+
+| **Tipo**                              | **Serviços com suporte**                                     | **Opções de redundância**            | **Uso**                                                      |
+| ------------------------------------- | ------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
+| Uso geral v2 Standard                 | Armazenamento de Blobs (incluindo Data Lake Storage), Armazenamento de Filas, Armazenamento de Tabelas e Arquivos do Azure | LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS | Tipo de conta de armazenamento básico para blobs, compartilhamento  de arquivos, filas e tabelas. Recomendado para a maioria dos cenários  que usam o Armazenamento do Azure. Caso deseje obter suporte para o NFS  (Network File System) nos Arquivos do Azure, use o tipo de conta de  compartilhamentos de arquivos premium. |
+| Blobs de blocos Premium               | Armazenamento de Blobs (incluindo Data Lake Storage)         | LRS, ZRS                             | Tipo de conta de armazenamento Premium para blobs de blocos e blobs  de acréscimo. Recomendado para cenários com altas taxas de transação ou  que usam objetos menores ou exigem uma latência de armazenamento sempre  baixa. |
+| Compartilhamentos de arquivos Premium | Arquivos do Azure                                            | LRS, ZRS                             | Tipo de conta de armazenamento Premium somente para  compartilhamentos de arquivos. Recomendadas para aplicações de escala  empresarial ou de alto desempenho. Use esse tipo de conta caso deseje  ter uma conta de armazenamento que dê suporte a compartilhamentos de  arquivos SMB e NFS. |
+| Blobs de página Premium               | Blobs de páginas somente                                     | LRS                                  | Tipo de conta de armazenamento Premium somente para blobs de páginas. |
+
+## Pontos de extremidade da conta de armazenamento
+
+Um dos benefícios de usar uma Conta de Armazenamento do Azure é ter  um namespace exclusivo no Azure para seus dados. Para fazer isso, cada  conta de armazenamento no Azure deve ter um nome de conta exclusivo no  Azure. A combinação do nome da conta e do ponto de extremidade de  serviço do Armazenamento do Azure forma os pontos de extremidade da sua  conta de armazenamento.
+
+Ao nomear sua conta de armazenamento, lembre-se dessas regras:
+
+- Os nomes da conta de armazenamento devem ter entre 3 e 24 caracteres e podem conter apenas números e letras minúsculas.
+- O nome da sua conta de armazenamento deve ser exclusivo no Azure.  Duas contas de armazenamento não podem ter o mesmo nome. Isso dá suporte à capacidade de ter um namespace exclusivo e acessível no Azure.
+
+A tabela a seguir mostra formato de ponto de extremidade dos serviços do Armazenamento do Azure.
+
+ 
+
+| **Serviço de armazenamento** | **Ponto de extremidade**                               |
+| ---------------------------- | ------------------------------------------------------ |
+| Armazenamento de Blobs       | <https:// storage-account-name.blob.core.windows.net>  |
+| Data Lake Storage Gen2       | <https:// storage-account-name.dfs.core.windows.net>   |
+| Arquivos do Azure            | <https:// storage-account-name.file.core.windows.net>  |
+| Armazenamento de Filas       | <https:// storage-account-name.queue.core.windows.net> |
+| Armazenamento de Tabelas     | <https:// storage-account-name.table.core.windows.net> |

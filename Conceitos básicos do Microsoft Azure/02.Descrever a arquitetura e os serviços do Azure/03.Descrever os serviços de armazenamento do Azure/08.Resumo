@@ -1,0 +1,21 @@
+# Resumo
+
+Neste módulo, você conheceu os serviços de armazenamento do  Azure. Você conheceu a conta de armazenamento do Azure e viu como ela  está relacionada a diferentes serviços de armazenamento. Você conheceu  os blobs de armazenamento e as opções de redundância, além de maneiras  de migrar e mover dados para o Azure e dentro dele.
+
+## Objetivos de aprendizagem
+
+Agora você deve estar apto a:
+
+- Comparar os serviços de armazenamento do Azure.
+- Descrever as camadas de armazenamento.
+- Descrever as opções de redundância.
+- Descrever as opções de conta de armazenamento e os tipos de armazenamento.
+- Identificar opções para mover arquivos, incluindo o AzCopy, o  Gerenciador de Armazenamento do Azure e a Sincronização de Arquivos do  Azure.
+- Descrever as opções de migração, incluindo as Migrações para Azure e o Azure Data Box.
+
+## Recursos adicionais
+
+Os recursos a seguir oferecem mais informações sobre os tópicos neste módulo ou relacionados a ele.
+
+- [Armazenar dados no Azure](https://learn.microsoft.com/pt-br/learn/paths/store-data-in-azure/) é um curso do Microsoft Learn que aborda mais informações sobre como armazenar dados no Azure.
+- [Microsoft Certified: O Azure Data Fundamentals](https://learn.microsoft.com/pt-br/learn/certifications/azure-data-fundamentals/) é uma certificação inteira, com treinamento associado que se aprofunda nos conceitos básicos de dados no Azure.

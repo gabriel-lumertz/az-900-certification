@@ -1,0 +1,109 @@
+# Exercício – Criar um blob de armazenamento
+
+## Criar uma conta de armazenamento
+
+Nesta tarefa, você criará uma nova conta de armazenamento.
+
+1.  Entre no portal do Microsoft Azure em [https://portal.azure.com](https://portal.azure.com/)
+
+2.  Selecione **Criar um recurso**.
+
+3.  Em Categorias, selecione **Armazenamento**.
+
+4.  Em Conta de armazenamento, selecione **Criar**.
+
+5.  Na guia **Básica** do painel Criar conta de armazenamento, preencha as informações a seguir. Mantenha os padrões para todo o resto.
+
+   
+
+| **Configuração**               | **Valor**                                                    |
+| ------------------------------ | ------------------------------------------------------------ |
+| Subscription                   | Selecione a assinatura que você deseja usar para o exercício. |
+| Grupo de recursos              | Selecione Criar novo e insira `IntroAzureRG` e selecione OK  |
+| Nome da conta de armazenamento | Criar um nome de conta de armazenamento exclusivo            |
+| Region                         | Manter o padrão                                              |
+| Desempenho                     | Standard                                                     |
+| Redundância                    | LRS (armazenamento com redundância local)                    |
+
+6.  Na guia **Avançado** da folha Criar uma conta de armazenamento, preencha o seguinte informações. Mantenha os padrões para todo o resto.
+
+   
+
+| **Configuração**                                             | **Valor**  |
+| ------------------------------------------------------------ | ---------- |
+| Permitir habilitar o acesso anônimo em contêineres individuais | Verificado |
+
+​                            ![Captura de tela mostrando como habilitar contêineres de acesso anônimo em uma conta de armazenamento.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-storage-services/media/storage-account-anonymous-containers.png)                                        
+
+7. Selecione **Examinar** para examinar as configurações da conta de armazenamento e permitir que o Azure valide a configuração.
+
+8. Após a validação, selecione **Criar**. Aguarde a notificação de que a conta foi criada com sucesso.
+
+9. Selecione **Ir para o recurso**.
+
+## Trabalhar com o armazenamento de blobs
+
+Nesta seção, você criará um contêiner de Blob e carregará uma imagem.
+
+1. Em **Armazenamento de dados**, selecione **Contêineres**.
+
+   ​                            ![Captura de tela da seção Adicionar contêiner de uma conta de armazenamento.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-storage-services/media/storage-account-menu.png)                                        
+
+2. Selecione **+ Contêiner** e preencha as informações.
+
+    
+
+| **Configuração**        | **Valor**                       |
+| ----------------------- | ------------------------------- |
+| Nome                    | Insira um nome para o contêiner |
+| Nível de acesso anônimo | Privado (sem acesso anônimo)    |
+
+3.  Selecione Criar.
+
+> [!TIP]
+>
+> A Etapa 4 precisará de uma imagem. Se você quiser carregar uma imagem que já esteja no computador, continue na Etapa 4. Caso contrário, abra  uma nova janela no navegador e use o Bing para pesquisar imagens de  flor. Salve a imagem no computador.
+
+4.  De volta ao portal do Azure, selecione o contêiner que você criou e clique em Carregar.
+
+5.  Procure o arquivo de imagem que você quer carregar. Selecione-a e depois carregue.
+
+> [!TIP]
+>
+> Você poderá carregar quantos blobs quiser dessa maneira. Novos blobs serão listados no contêiner.
+
+6.  Selecione o Blob (arquivo) que você acabou de carregar. Você deve estar na guia propriedades.
+
+7.  Copie a URL do campo de URL e cole-a em uma nova guia. Você receberá um uma mensagem de erro semelhante à mostrada a seguir.		
+
+```
+   <Error>
+   <Code>ResourceNotFound</Code>
+     <Message>The specified resource does not exist. RequestId:4a4bd3d9-101e-005a-1a3e-84bd42000000</Message>
+   </Error>    
+```
+
+## Altere o nível de acesso do blob
+
+1. Retorne ao portal do Azure.
+
+2. Selecione Alterar nível de acesso.
+
+3. Defina o nível de acesso anônimo como Blob (acesso de leitura anônimo somente para blobs).
+
+   ​                            ![Captura de tela com a opção Alterar nível de acesso realçada.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-storage-services/media/blob-access-level.png)                                        
+
+4.  Selecione OK.
+
+5.  Atualize a guia em que você tentou acessar o arquivo anteriormente.
+
+Parabéns, você concluiu este exercício. Você criou uma conta de  armazenamento, adicionou um contêiner a ela e depois carregou blobs  (arquivos) no contêiner. Depois, você alterou o nível de acesso para  poder acessar o arquivo pela Internet.
+
+## Limpar
+
+Para limpar os ativos criados neste exercício e evitar custos  desnecessários, exclua o grupo de recursos (e todos os recursos  associados).
+
+1.  Na home page do Azure, nos serviços do Azure, selecione **Grupos de recursos**.
+2.  Selecione o grupo **de recursos IntroAzureRG** .
+3.  Selecione **Excluir grupo de recursos**.
+4.  Insira `IntroAzureRG` para confirmar a exclusão do grupo de recursos e selecione excluir.

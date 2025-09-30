@@ -1,0 +1,49 @@
+# Identificar as opções de migração de dados do Azure
+
+Agora que você entende as diferentes opções de armazenamento no  Azure, é importante entender também como colocar seus dados e  informações no Azure. O Azure dá suporte à migração em tempo real de  infraestrutura, aplicativos e dados usando o serviço Migrações para  Azure, bem como a migração assíncrona de dados usando o Azure Data Box.
+
+## Migrações para Azure
+
+O Migrações para Azure é um serviço que ajuda você a migrar de um  ambiente local para a nuvem. O Migrações para Azure funciona como um hub para ajudar você a gerenciar a avaliação e a migração do datacenter  local para o Azure. Elas fornecem o seguinte:
+
+- **Plataforma de migração unificada**: Um único portal para iniciar, executar e acompanhar sua migração para o Azure.
+- **Variedade de ferramentas**: Uma variedade  de ferramentas para avaliação e migração. As ferramentas das Migrações  para Azure incluem itens como Migrações para Azure: descoberta e  avaliação. Além de Migrações para Azure: ferramenta de Migração do  Servidor. As Migrações para Azure também integram-se a outros serviços  do Azure e a outras ferramentas, bem como com ofertas de ISVs  (fornecedores independentes de software).
+- **Avaliação e migração**: no hub do Migrações para Azure, você pode avaliar e migrar sua infraestrutura local para o Azure.
+
+### Ferramentas integradas
+
+Além de trabalhar com ferramentas de ISVs, o hub do Migrações para  Azure também inclui as seguintes ferramentas para ajudar na migração:
+
+- **Migrações para Azure: Descoberta e avaliação**. Descubra e avalie servidores locais em execução em VMware, Hyper-V  servidores físicos para se preparar para a migração para o Azure.
+- **Migrações para Azure: Migração de Servidor**. Migre VMs do VMware, VMs do Hyper-V, servidores físicos, outros servidores virtualizados e VMs da nuvem pública para o Azure.
+- **Assistente de Migração de Dados**. O  Assistente de Migração de Dados é uma ferramenta autônoma criada para  avaliar SQL Servers. Ele ajuda a identificar possíveis problemas que  bloqueiam a migração. Ele identifica recursos sem suporte e novos  recursos dos quais você pode se beneficiar após a migração e o caminho  certo para a migração de banco de dados.
+- **Serviço de Migração de Banco de Dados do Azure**. Migre bancos de dados locais para VMs do Azure executando SQL Server,  Banco de Dados SQL do Azure ou Instâncias Gerenciadas de SQL.
+- **Assistente de Migração do Serviço de Aplicativo do Azure**. O Assistente de Migração do Serviço de Aplicativo do Azure é uma  ferramenta autônoma para avaliar sites locais para migração para o  Serviço de Aplicativo do Azure. Use o Migration Assistant para migrar  aplicativos Web .NET e PHP para o Azure.
+- **Azure Data Box**. Use os produtos Azure Data Box offline para mover grandes quantidades de dados offline para o Azure.
+
+## Azure Data Box
+
+O Azure Data Box é um serviço de migração física que ajuda a  transferir grandes quantidades de dados de maneira rápida, barata e  confiável. A transferência de dados segura é acelerada com o envio de um dispositivo de armazenamento Data Box proprietário que tem uma  capacidade máxima de armazenamento utilizável de 80 terabytes. O Data  Box é transportado entre o datacenter por meio de uma empresa regional.  Uma caixa robusta protege o Data Box contra danos durante o transporte.
+
+Você pode solicitar o dispositivo Data Box pelo portal do Azure para  importar dados de ou exportar dados para o Azure. Depois que o  dispositivo é recebido, você pode configurá-lo rapidamente usando a IU  da Web local, e conectá-lo à sua rede. Depois de terminar a  transferência dos dados (para dentro ou para fora do Azure), basta  devolver o Data Box. Se você estiver transferindo dados para o Azure,  eles serão carregados automaticamente depois que a Microsoft receber o  Data Box de volta. Todo o processo é acompanhado de ponta a ponta pelo  serviço Data Box no portal do Azure.
+
+### Casos de uso
+
+O Data Box é ideal para transferir os tamanhos de dados maiores do  que 40 TB em cenários com conectividade de rede limitada a inexistente. A movimentação de dados pode ser única, periódica ou uma transferência de dados em massa inicial seguida por transferências periódicas.
+
+Veja a seguir os vários cenários em que o Data Box pode ser usado para importar dados para o Azure.
+
+- Migração única – Quando um grande volume de dados do local é transferido para o Azure.
+- Movimentação de uma biblioteca de mídia de fitas offline para o Azure para a criação de uma biblioteca de mídia online.
+- Migração do farm de VMs, do SQL Server e de aplicativos para o Azure.
+- Migração de dados históricos para o Azure para análise e relatórios detalhados com o HDInsight.
+- Transferência em massa inicial – quando uma transferência em massa  inicial é feita usando o Data Box (semente) seguida por transferências  incrementais pela rede.
+- Carregamentos periódicos - quando grandes quantidades de dados são geradas periodicamente e precisam ser movidas para o Azure.
+
+Veja a seguir os vários cenários em que o Data Box pode ser usado para exportar dados do Azure.
+
+- Recuperação de desastre – quando uma cópia dos dados do Azure é  restaurada para uma rede local. Em um cenário típico de recuperação de  desastre, um grande volume de dados do Azure é exportado para um Data  Box. Em seguida, a Microsoft envia esse Data Box, e os dados são  restaurados no seu local após um breve período.
+- Requisitos de segurança – quando você precisa ser capaz de exportar  dados provenientes do Azure devido a requisitos governamentais ou de  segurança.
+- Migre de volta para o local ou para outro provedor de serviços de  nuvem: quando desejar mover todos os dados de volta para o local ou para outro provedor de serviços de nuvem, exporte os dados por meio do Data  Box para migrar as cargas de trabalho.
+
+Depois que os dados do seu pedido de importação são importados no  Azure, os discos do dispositivo são apagados, de acordo com os padrões  NIST 800-88r1. Para uma ordem de exportação, os discos são apagados  quando o dispositivo atinge o datacenter do Azure.
