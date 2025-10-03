@@ -1,0 +1,21 @@
+# Resumo
+
+Neste módulo, você aprendeu sobre os serviços e ferramentas de  identidade, acesso e segurança do Azure. Você abordou os métodos de  autenticação, incluindo quais são mais seguros. Você aprendeu a  restringir o acesso com base em uma função para ajudar a criar um  ambiente mais seguro. E você aprendeu sobre os modelos de defesa em  profundidade e confiança zero.
+
+## Objetivos de aprendizagem
+
+Agora você deve ser capaz de:
+
+- Descreva os serviços de diretório no Azure, incluindo a ID do Microsoft Entra e o Microsoft Entra Domain Services.
+- Descreva os métodos de autenticação no Azure, incluindo SSO (logon único), MFA (autenticação multifator) e sem senha.
+- Descrever identidades externas e acesso de convidados no Azure.
+- Descreva o Acesso Condicional do Microsoft Entra.
+- Descrever o RBAC (Controle de Acesso Baseado em Função) do Azure.
+- Descrever o conceito de Confiança Zero.
+- Descreva a finalidade do modelo de defesa em profundidade.
+- Descreva a finalidade do Microsoft Defender para Nuvem.
+
+## Recursos adicionais
+
+Os recursos a seguir fornecem mais informações sobre tópicos neste módulo ou relacionados a este módulo.
+[Microsoft Certified: Security, Compliance e Identity Fundamentals](https://learn.microsoft.com/pt-br/learn/certifications/security-compliance-and-identity-fundamentals/) é uma certificação inteira, com treinamento associado, dedicado a  ajudar você a entender e gerenciar melhor a segurança, a conformidade e a identidade.

@@ -1,0 +1,19 @@
+# Descrever as identidades externas do Azure
+
+Uma identidade externa é uma pessoa, um dispositivo, um serviço  etc. que está fora da sua organização. O recurso Identidades Externas do Microsoft Entra refere-se a todas as maneiras pelas quais você pode  interagir com usuários fora da organização com segurança. Se você quiser colaborar com parceiros, distribuidores ou fornecedores, compartilhe  seus recursos e defina como os usuários internos poderão acessar  organizações externas. Se você é um desenvolvedor que cria aplicativos  voltados para o consumidor, pode gerenciar as experiências de identidade dos clientes.
+
+As identidades externas podem soar semelhantes ao login único. Com  identidades externas, os usuários externos podem "trazer suas próprias  identidades". Se eles tiverem uma identidade digital emitida pela  empresa ou pelo governo ou uma identidade social não gerenciada, como o  Google ou o Facebook, eles poderão usar as próprias credenciais para  entrar. O provedor de identidade do usuário externo gerencia a  identidade dele e você gerencia o acesso aos seus aplicativos com o  Microsoft Entra ID ou o Azure AD B2C para manter seus recursos  protegidos.
+
+​                            ![Diagrama mostrando colaboradores B2B acessando seu locatário e colaboradores B2C acessando o locatário do AD B2C.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-external-identities-5a892021-ca79a69c.png)                                        
+
+As seguintes funcionalidades compõem identidades externas:
+
+-   **Colaboração B2B (Business to business)** –  Colabore com usuários externos deixando que eles usem a identidade  preferida para entrar nos aplicativos Microsoft ou em outros aplicativos empresariais (aplicativos SaaS, aplicativos personalizados etc.). Os  usuários de colaboração B2B são representados em seu diretório,  normalmente como usuários convidados.
+-   **Conexão direta de B2B** – estabeleça uma  relação de confiança mútua e de duas vias com outra organização do  Microsoft Entra para colaboração contínua. Atualmente, o B2B Direct  Connect dá suporte aos canais compartilhados do Teams, permitindo que  usuários externos acessem seus recursos de dentro de suas instâncias  próprias do Teams. Os usuários do B2B Direct Connect não são  representados em seu diretório, mas são visíveis de dentro do canal  compartilhado do Teams e podem ser monitorados em relatórios do centro  de administração do Teams.
+- **Microsoft Azure Active Directory entre empresa e cliente (B2C)**: publique aplicativos SaaS modernos ou aplicativos desenvolvidos sob  medida (excluindo aplicativos da Microsoft) para consumidores e  clientes, enquanto usa o Azure AD B2C para o gerenciamento de identidade e acesso.
+
+Dependendo de como deseja interagir com organizações externas e os  tipos de recursos que você precisa compartilhar, você pode usar uma  combinação dessas funcionalidades.
+
+Com o ID do Microsoft Entra, você pode habilitar facilmente a  colaboração entre limites organizacionais usando o recurso Microsoft  Entra B2B. Usuários convidados de outros locatários podem ser convidados por administradores ou por outros usuários. Isso também se aplica às  identidades sociais, como contas da Microsoft.
+
+Você também pode assegurar com facilidade que os usuários convidados  tenham o acesso apropriado. Você pode pedir que os próprios convidados  ou um tomador de decisão participem de uma revisão de acesso e  recertifiquem (ou atestem) o acesso dos convidados. Os avaliadores podem dar sua opinião sobre a necessidade de cada usuário de acesso contínuo  com base nas sugestões do Microsoft Entra ID. Quando uma revisão de  acesso for finalizada, você poderá alterar e remover o acesso de  convidados que não precisam mais dela.

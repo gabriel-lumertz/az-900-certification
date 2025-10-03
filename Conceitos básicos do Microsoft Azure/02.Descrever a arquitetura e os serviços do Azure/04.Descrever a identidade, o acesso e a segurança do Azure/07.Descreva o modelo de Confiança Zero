@@ -1,0 +1,19 @@
+# Descreva o modelo de Confiança Zero
+
+A Confiança Zero é um modelo de segurança que pressupõe o pior  cenário e protege os recursos com essa expectativa. A Confiança Zero  pressupõe uma violação desde o início e verifica cada solicitação como  se ela tivesse sido originada em uma rede não controlada.
+
+Atualmente, as organizações precisam de um novo modelo de segurança  que se adapte efetivamente à complexidade dos ambientes modernos, que  adote a força de trabalho móvel e proteja pessoas, dispositivos,  aplicativos e dados onde quer que estejam.
+
+Para abordar esse novo mundo da computação, a Microsoft recomenda  altamente o modelo de segurança de Confiança Zero, que se baseia nestes  princípios orientadores:
+
+- **Verificar de modo explícito** – sempre autentique e autorize com base em todos os pontos de dados disponíveis.
+- **Usar o acesso com o mínimo de privilégios** – limite o acesso do usuário com JIT/JEA (Just-In-Time e  Just-Enough-Access), políticas adaptáveis baseadas em risco e proteção  de dados.
+- **Pressupor a violação** – minimize o raio de alcance e segmente o acesso. Verifique a criptografia de ponta a ponta. Use a análise para obter visibilidade, promover a detecção de ameaças e aprimorar as defesas.
+
+## Ajustando-se à Confiança Zero
+
+Tradicionalmente, as redes corporativas eram restritas, protegidas e, em geral, supostamente seguras. Somente computadores gerenciados podiam ingressar na rede, o acesso de VPN era fortemente controlado e os  dispositivos pessoais eram frequentemente restritos ou bloqueados.
+
+O modelo de Confiança Zero muda completamente esse cenário. Em vez de supor que um dispositivo é seguro porque está dentro da rede  corporativa, ele requer que todos se autentiquem. Em seguida, concede  acesso com base na autenticação e não na localização.
+
+​                            ![Diagrama comparando a autenticação Confiança Zero de todos em comparação com a autenticação clássica baseada no local da rede.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/zero-trust-cf9202be-d5c6882e.png)                                        

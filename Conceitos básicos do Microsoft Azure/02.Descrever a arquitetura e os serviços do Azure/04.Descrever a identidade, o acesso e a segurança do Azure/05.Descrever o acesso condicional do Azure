@@ -1,0 +1,31 @@
+# Descrever o acesso condicional do Azure
+
+O Acesso Condicional é uma ferramenta que o Microsoft Entra ID  usa para permitir (ou negar) o acesso a recursos baseados em sinais de  identidade. Esses sinais incluem quem é o usuário, onde ele está e de  qual dispositivo está solicitando acesso.
+
+O acesso condicional ajuda os administradores de TI a:
+
+- Capacitar os usuários a serem produtivos em qualquer lugar e sempre.
+- Proteger os ativos da organização.
+
+O Acesso Condicional também proporciona uma experiência de  autenticação multifator mais granular para os usuários. Por exemplo, um  segundo fator de autenticação poderá não ser solicitado se o usuário  estiver em uma localização conhecida. No entanto, ele poderá ser  solicitado se os sinais de conexão do usuário forem incomuns ou se o  usuário estiver em uma localização inesperada.
+
+Durante a conexão, o acesso condicional coleta sinais do usuário,  toma decisões com base nesses sinais e impõe essa decisão, permitindo ou negando a solicitação de acesso ou solicitando uma resposta de  autenticação multifator.
+
+O seguinte diagrama ilustra esse fluxo:
+
+​                            ![Diagrama mostrando o fluxo de acesso condicional de um sinal que leva a uma decisão, levando à imposição.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/conditional-access-9bd268b8-757297cb.png)                                        
+
+Aqui, o sinal pode ser a localização do usuário, o dispositivo do usuário ou o aplicativo que o usuário está tentando acessar.
+
+Com base nesses sinais, a decisão poderá ser permitir acesso completo se o usuário estiver entrando de seu local usual. Se o usuário estiver  entrando de uma localização incomum ou que esteja marcada como de alto  risco, o acesso poderá ser totalmente bloqueado ou possivelmente  concedido depois que o usuário fornecer uma segunda forma de  autenticação.
+
+A imposição é a ação que executa a decisão. Por exemplo, permitir o  acesso ou exigir que o usuário forneça uma segunda forma de  autenticação.
+
+## Quando posso usar o acesso condicional?
+
+O acesso condicional é útil quando você precisa:
+
+- Exija a MFA (autenticação multifator) para acessar um aplicativo,  dependendo da função, da localização ou da rede do solicitante. Por  exemplo, você pode exigir a MFA para administradores, mas não para  usuários regulares ou pessoas que se conectam de fora da rede  corporativa.
+- Exigir acesso a serviços somente por meio de aplicativos cliente  aprovados. Por exemplo, você pode limitar quais aplicativos de email  podem se conectar ao serviço de email.
+- Exigir que os usuários acessem seu aplicativo somente de  dispositivos gerenciados. Um dispositivo gerenciado é um dispositivo que atende os padrões de segurança e conformidade.
+- Bloquear o acesso de fontes não confiáveis, como o acesso de locais desconhecidos ou inesperados.

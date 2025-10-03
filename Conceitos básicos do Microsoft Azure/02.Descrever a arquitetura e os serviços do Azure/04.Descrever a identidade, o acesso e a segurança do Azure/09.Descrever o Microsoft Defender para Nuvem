@@ -1,0 +1,85 @@
+# Descrever o Microsoft Defender para Nuvem
+
+O Defender para Nuvem é uma ferramenta de monitoramento para  gerenciamento da postura de segurança e proteção contra ameaças. Ele  monitora ambientes de nuvem, locais, híbridos e de multinuvem para  fornecer diretrizes e notificações com o objetivo de fortalecer sua  postura de segurança.
+
+O Defender para Nuvem fornece as ferramentas necessárias para  proteger seus recursos, acompanhar sua postura de segurança, proteger  contra ataques cibernéticos e simplificar o gerenciamento de segurança. A implantação do Defender para Nuvem é fácil e já está integrada  nativamente ao Azure.
+
+## Proteção em todos os lugares em que você está implantado
+
+Como o Defender para Nuvem é um serviço nativo do Azure, muitos  serviços do Azure são monitorados e protegidos sem a necessidade de  qualquer implantação. No entanto, se você também tiver um datacenter  local ou estiver operando em outro ambiente de nuvem, o monitoramento  dos serviços do Azure poderá não fornecer uma visão completa da sua  situação de segurança.
+
+Quando necessário, o Defender para Nuvem pode implantar  automaticamente um agente do Log Analytics para coletar dados  relacionados à segurança. Para computadores do Azure, a implantação é  tratada diretamente. Para ambientes híbridos e multinuvem, os planos do  Microsoft Defender são estendidos para máquinas não Azure com a ajuda do Azure Arc. Os recursos de gerenciamento de postura de segurança em  nuvem (CSPM) são estendidos para máquinas multinuvem sem a necessidade  de agentes.
+
+### Proteções nativas do Azure
+
+O Defender para Nuvem ajuda a detectar ameaças em:
+
+- Serviços PaaS do Azure – detecte ameaças que tenham como alvo  serviços do Azure, incluindo o Serviço de Aplicativo do Azure, SQL do  Azure, Conta de Armazenamento do Azure e outros serviços de dados. Você  também pode executar a detecção de anomalias nos logs de atividades do  Azure usando a integração nativa com o Microsoft Defender para  Aplicativos de Nuvem (anteriormente conhecido como Microsoft Cloud App  Security).
+- Serviços de dados do Azure – o Defender para Nuvem inclui recursos  que ajudam a classificar automaticamente os dados no SQL do Azure. Você  também pode obter avaliações de possíveis vulnerabilidades nos serviços  de Armazenamento e SQL do Azure e recomendações de como mitigá-las.
+- Redes – o Defender para Nuvem ajuda a limitar a exposição a ataques  de força bruta. Ao reduzir o acesso às portas de máquina virtual, usando o acesso de VM Just-In-Time, você pode proteger sua rede, impedindo  acesso desnecessário. Você pode definir políticas de acesso seguro em  portas selecionadas somente para usuários autorizados, endereços IP ou  intervalos de endereços IP de origem permitida por um tempo limitado.
+
+### Proteja seus recursos híbridos
+
+Além de defender seu ambiente do Azure, você pode adicionar os  recursos do Defender para Nuvem em seu ambiente de nuvem híbrido para  proteger seus servidores que não sejam Azure. Para ajudá-lo a se  concentrar no que é mais importante, você obterá inteligência contra  ameaças personalizada e alertas priorizados de acordo com seu ambiente  específico.
+
+Para estender a proteção para computadores locais, implante o Azure  Arc e habilite os recursos de segurança aprimorados do Defender para  Nuvem.
+
+### Recursos do Defender em execução em outras nuvens
+
+O Defender para Nuvem também pode proteger recursos em outras nuvens (como AWS e GCP).
+
+Por exemplo, se você conectou uma conta do Amazon Web Services a uma  assinatura do Azure, você pode habilitar qualquer uma dessas proteções:
+
+- Os recursos do CSPM do Defender para Nuvem se estendem aos seus  recursos da AWS. Esse plano sem agente avalia os recursos da AWS de  acordo com as recomendações de segurança específicas da AWS e inclui os  resultados na classificação de segurança. Os recursos também serão  avaliados quanto à conformidade com padrões internos específicos da AWS  (AWS CIS, AWS PCI DSS e AWS Foundational Security Best Practices). A  página de inventário de ativos do Defender para Nuvem é um recurso  habilitado para várias nuvens que ajuda você a gerenciar seus recursos  da AWS e do Azure juntos.
+- O Microsoft Defender para Contêineres estende a detecção de ameaças  de contêiner e as defesas avançadas para os clusters do Amazon EKS no  Linux.
+- O Microsoft Defender para Servidores adiciona proteções avançadas e  detecção de ameaças às instâncias do EC2 no Windows e no Linux.
+
+## Avaliar, proteger e defender
+
+O Defender para Nuvem preenche três necessidades vitais à medida que  você gerencia a segurança de seus recursos e cargas de trabalho locais e na nuvem:
+
+- Avaliação contínua – Conheça sua postura de segurança. Identifique e rastreie vulnerabilidades.
+- Proteger – Proteja recursos e serviços com o Azure Security Benchmark.
+- Defender – Detecte e resolva ameaças a recursos, cargas de trabalho e serviços.
+
+​                            ![Diagrama reforçando avaliação, proteção e defesa.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/assess-secure-defend-46228306-c726aca3.png)                                        
+
+### Avaliar continuamente
+
+O Defender para nuvem ajuda você a avaliar continuamente o ambiente. O Defender para Nuvem inclui soluções de avaliação de vulnerabilidade  para suas máquinas virtuais, registros de contêiner e servidores SQL.
+
+O Microsoft Defender para servidores inclui a integração automática e nativa com o Microsoft Defender para Ponto de Extremidade. Com essa  integração habilitada, você terá acesso às descobertas de  vulnerabilidade do gerenciamento de ameaças e vulnerabilidades da  Microsoft.
+
+Entre essas ferramentas de avaliação, você terá verificações de  vulnerabilidade regulares e detalhadas que abrangem computação, dados e  infraestrutura. Você pode examinar e responder aos resultados dessas  verificações dentro do Defender para Nuvem.
+
+### Seguro
+
+Dos métodos de autenticação para controle de acesso ao conceito de  Confiança Zero, a segurança na nuvem é um fundamento essencial que deve  ser feito corretamente. Para ser seguro na nuvem, você precisa garantir  que suas cargas de trabalho estejam seguras. Para proteger suas cargas  de trabalho, você precisa de políticas de segurança em vigor sob medida  para seu ambiente e sua situação. Como as políticas do Defender para  Nuvem são criadas sobre controles do Azure Policy, você está obtendo  toda a gama e a flexibilidade de uma solução de política de alto nível.  No Defender para Nuvem, você pode definir suas políticas a serem  executadas nos grupos de gerenciamento, entre assinaturas e até mesmo  para um locatário inteiro.
+
+Um dos benefícios da migração para a nuvem é a capacidade de crescer e escalar de acordo com as exigências, adicionando novos serviços e  recursos conforme necessário. O Defender para Nuvem está constantemente  monitorando novos recursos que estão sendo implantados em suas cargas de trabalho. O Defender para Nuvem avalia se novos recursos estão  configurados de acordo com as práticas recomendadas de segurança. Caso  contrário, eles serão sinalizados e você obterá uma lista priorizada de  recomendações para o que precisa corrigir. As recomendações ajudam a  reduzir a superfície de ataque em cada um de seus recursos.
+
+A lista de recomendações está habilitada e tem suporte do Azure  Security Benchmark. Esse parâmetro de comparação específico do Azure e  criado pela Microsoft fornece um conjunto de diretrizes de melhores  práticas de segurança e conformidade baseadas em estruturas de  conformidade comuns.
+
+Dessa forma, o Defender para Nuvem permite que você não apenas defina políticas de segurança, como aplique padrões de configuração segura em  todos os seus recursos.
+
+Para ajudar você a entender a importância de cada recomendação para  sua postura de segurança geral, o Defender para Nuvem agrupa as  recomendações em controles de segurança e adiciona um valor de  classificação de segurança a cada controle. A classificação de segurança fornece um indicador simples e rápido sobre a integridade de sua  postura de segurança, e os controles fornecem uma lista de trabalho com  as coisas a serem consideradas para aprimorar a classificação de  segurança e a postura geral de segurança.
+
+​                            ![Captura de tela mostrando a classificação de segurança do Microsoft Defender para Nuvem.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/defender-for-cloud-d47a71d8-d1cc9fa3.png)                                        
+
+### Defender
+
+As duas primeiras áreas se concentraram em avaliar, monitorar e dar  manutenção ao ambiente. O Defender para Nuvem também ajuda você a  defender seu ambiente fornecendo alertas de segurança e recursos  avançados de proteção contra ameaças.
+
+#### Alertas de segurança
+
+Quando o Defender para Nuvem detecta uma ameaça em qualquer área do  ambiente, ele gera um alerta de segurança. Alertas de segurança:
+
+- Descrever detalhes dos recursos afetados
+- Sugerir etapas de correção
+- Fornecer, em alguns casos, uma opção para disparar um aplicativo lógico em resposta
+
+Se um alerta for gerado pelo Defender para Nuvem ou recebido pelo  Defender para Nuvem de um produto de segurança integrado, você poderá  exportá-lo. A proteção contra ameaças do Defender para Nuvem inclui a  análise da cadeia de encerramento de fusão, que correlaciona  automaticamente alertas no seu ambiente com base na análise cibernética  da cadeia de encerramento, para ajudar você a entender melhor todos os  detalhes de um ataque, como ele começou e que tipo de impacto causou nos seus recursos.
+
+#### Proteção avançada contra ameaças
+
+O Defender para nuvem fornece recursos avançados de proteção contra  ameaças para muitos de seus recursos implantados, incluindo máquinas  virtuais, bancos de dados SQL, contêineres, aplicativos Web e sua rede.  As proteções incluem proteger as portas de gerenciamento de suas VMs com acesso just-in-time e controles de aplicativos adaptáveis para criar  listas de permissões de quais aplicativos devem ou não ser executados  nos computadores.

@@ -1,0 +1,93 @@
+# Descrever a defesa em profundidade
+
+O objetivo da defesa em profundidade é proteger as informações e  impedir que elas sejam roubadas por pessoas que não estejam autorizadas a acessá-las.
+
+Uma estratégia de defesa em profundidade usa uma série de mecanismos  para reduzir o avanço de um ataque que busca obter acesso não autorizado aos dados.
+
+## Camadas da defesa em profundidade
+
+Você pode visualizar a defesa em profundidade como um conjunto de  camadas, com os dados a serem protegidos no centro e todas as outras  camadas funcionando para proteger essa camada de dados central.
+
+​                            ![Um diagrama mostrando a defesa em camadas profundas. No centro: dados, aplicativo, computação, rede, perímetro, identidade e acesso, segurança física.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/defense-depth-486afc12-71a03f12.png)                                        
+
+Cada camada fornece proteção, de modo que se uma camada for violada,  uma camada seguinte já estará em vigor para impedir a exposição  adicional. Essa abordagem elimina a dependência de qualquer camada única de proteção. Ela desacelera um ataque e fornece informações de alerta  sobre as quais as equipes de segurança podem agir, automática ou  manualmente.
+
+Aqui está uma breve visão geral da função de cada camada:
+
+- A camada de segurança física é a primeira linha de defesa para proteger o hardware de computação no datacenter.
+- A camada de identidade e acesso controla o acesso à infraestrutura e ao controle de alterações.
+- A camada de perímetro usa a proteção contra DDoS (ataque de negação  de serviço distribuído) para filtrar ataques em grande escala antes que  eles possam causar uma negação de serviço para os usuários.
+- A camada de rede limita a comunicação entre recursos por meio de controles de acesso e segmentação.
+- A camada de computação protege o acesso a máquinas virtuais.
+- A camada de aplicativo ajuda a garantir que os aplicativos estejam seguros e livres de vulnerabilidades de segurança.
+- A camada de dados controla o acesso aos dados corporativos e do cliente que você precisa proteger.
+
+Essas camadas fornecem diretrizes para ajudar você a tomar decisões  de configuração de segurança em todas as camadas de seus aplicativos.
+
+O Azure fornece ferramentas e recursos de segurança em todos os  níveis do conceito de defesa em profundidade. Vamos examinar cada camada em mais detalhes:
+
+### Segurança física
+
+Proteger fisicamente o acesso a edifícios e controlar o acesso ao  hardware de computação no datacenter é a primeira linha de defesa.
+
+Com a segurança física, a intenção é fornecer garantias físicas  contra o acesso aos ativos. Essas garantias asseguram que outras camadas não possam ser ignoradas e que a perda ou o roubo seja tratado de  maneira adequada. A Microsoft usa vários mecanismos de segurança físicos em seus datacenters de nuvem.
+
+### Identidade e acesso
+
+A camada de identidade e acesso refere-se a garantir que as  identidades estejam seguras, que o acesso seja concedido apenas ao que é necessário e que os eventos de entrada e as alterações sejam  registradas.
+
+Nessa camada, é importante:
+
+- Controle o acesso à infraestrutura e o controle de alterações.
+- Usar o SSO (logon único) e a autenticação multifator.
+- Faça a auditoria de eventos e alterações.
+
+### Perímetro
+
+O perímetro da rede protege seus recursos contra ataques baseados na  rede. Identificar esses ataques, eliminar o impacto e alertar quando  eles ocorrem são maneiras importantes de manter a rede segura.
+
+Nessa camada, é importante:
+
+- Usar a Proteção contra DDoS para filtrar ataques em grande escala  antes que eles possam afetar a disponibilidade de um sistema para os  usuários.
+- Use firewalls de perímetro para identificar e alertar sobre ataques maliciosos contra a rede.
+
+### Rede
+
+Essa camada concentra-se em limitar a conectividade de rede entre  todos os recursos para permitir apenas o necessário. Ao limitar essa  comunicação, você reduz o risco de uma disseminação de ataques para  outros sistemas na rede.
+
+Nessa camada, é importante:
+
+- Limite a comunicação entre os recursos.
+- Negue por padrão.
+- Restringir o acesso à Internet de entrada e limitar o acesso de saída quando apropriado.
+- Implemente a conectividade segura com as redes locais.
+
+### Computação
+
+Malware, sistemas sem patches e sistemas sem proteção adequada abrem o ambiente para ataques. Essa camada tem como foco garantir que os  recursos de computação estejam seguros e que haja controles adequados em vigor para minimizar os problemas de segurança.
+
+Nessa camada, é importante:
+
+- Proteger o acesso às máquinas virtuais.
+- Implementar o Endpoint Protection em dispositivos e manter os sistemas atualizados e com patches.
+
+### Aplicativo
+
+A integração da segurança no ciclo de vida de desenvolvimento do  aplicativo ajuda a reduzir o número de vulnerabilidades introduzidas no  código. Toda equipe de desenvolvimento deve garantir que seus  aplicativos sejam seguros por padrão.
+
+Nessa camada, é importante:
+
+- Verificar se os aplicativos estão seguros e livres de vulnerabilidades.
+- Armazene os segredos de aplicativos confidenciais em uma mídia de armazenamento seguro.
+- Faça com que a segurança seja um requisito de design em todo o desenvolvimento do aplicativo.
+
+### Dados
+
+Quem armazena dados e controla o acesso a eles é responsável por  garantir que estejam protegidos adequadamente. É comum que requisitos  regulatórios determinem os controles e os processos que precisam estar  em vigor para garantir a confidencialidade, a integridade e a  disponibilidade dos dados.
+
+Em quase todos os casos, os invasores estão em busca de dados:
+
+- Armazenados em um banco de dados.
+- Armazenados em disco em máquinas virtuais.
+- Armazenados em aplicativos SaaS (software como serviço), como o Office 365.
+- Gerenciados por meio do armazenamento em nuvem.

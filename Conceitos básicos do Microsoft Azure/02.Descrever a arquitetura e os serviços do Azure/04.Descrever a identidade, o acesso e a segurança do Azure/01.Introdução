@@ -1,0 +1,16 @@
+# Introdução
+
+Neste módulo, você será apresentado à identidade, acesso e  ferramentas do Azure e aos serviços e ferramentas de segurança. Você  aprenderá sobre serviços de diretório no Azure, métodos de autenticação e controle de acesso. Você também abordará conceitos como Zero Trust e  Defesa em Profundidade, e como esses conceitos mantêm sua nuvem mais  segura. Você encerrará com uma introdução ao Microsoft Defender para  Nuvem.
+
+## Objetivos de aprendizagem
+
+Depois de concluir este módulo, você poderá:
+
+- Descreva os serviços de diretório no Azure, incluindo a ID do Microsoft Entra e o Microsoft Entra Domain Services.
+- Descreva os métodos de autenticação no Azure, incluindo SSO (logon único), MFA (autenticação multifator) e sem senha.
+- Descrever identidades externas e acesso de convidados no Azure.
+- Descreva o Acesso Condicional do Microsoft Entra.
+- Descrever o RBAC (Controle de Acesso Baseado em Função) do Azure.
+- Descrever o conceito de Confiança Zero.
+- Descreva a finalidade do modelo de defesa em profundidade.
+- Descreva a finalidade do Microsoft Defender para Nuvem.

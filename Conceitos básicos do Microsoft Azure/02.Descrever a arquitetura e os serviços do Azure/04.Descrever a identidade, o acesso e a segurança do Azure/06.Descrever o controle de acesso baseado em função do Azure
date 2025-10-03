@@ -1,0 +1,39 @@
+# Descrever o controle de acesso baseado em função do Azure
+
+Quando você tem várias equipes de TI e engenharia, como é  possível controlar o acesso que eles têm aos recursos no seu ambiente de nuvem? O princípio de privilégios mínimos diz que você só deve conceder acesso até o nível necessário para concluir uma tarefa. Se você  precisar apenas de acesso de leitura a um blob de armazenamento, só será concedido acesso de leitura a esse blob de armazenamento. O acesso de  gravação a esse blob não deve ser concedido, nem o acesso de leitura a  outros blobs de armazenamento. Essa é uma boa prática de segurança para  seguir.
+
+No entanto, o gerenciamento desse nível de permissões para uma equipe inteira se tornaria tedioso. Em vez de definir os requisitos de acesso  detalhados para cada indivíduo e atualizar os requisitos de acesso  quando outros recursos forem criados ou novas pessoas entrarem na  equipe, o Azure permite controlar o acesso por meio do RBAC do Azure  (controle de acesso baseado em função do Azure).
+
+O Azure fornece funções internas que descrevem regras de acesso  comuns para os recursos de nuvem. Você também pode definir suas funções. Cada função tem um conjunto associado de permissões de acesso  relacionadas a essa função. Quando você atribui indivíduos ou grupos a  uma ou mais funções, eles recebem todas as permissões de acesso  relacionadas.
+
+Portanto, se você contratar um novo engenheiro e adicioná-lo ao grupo do RBAC do Azure para engenheiros, ele obterá automaticamente o mesmo  acesso que os outros engenheiros do mesmo grupo do RBAC do Azure. Da  mesma forma, se você adicionar outros recursos e apontar o RBAC do Azure para eles, todos nesse grupo do RBAC do Azure vão ter as permissões nos novos recursos, bem como nos recursos existentes.
+
+## Como o controle de acesso baseado em função é aplicado aos recursos?
+
+O controle de acesso baseado em função é aplicado a um escopo, que é  um recurso ou um conjunto de recursos ao qual esse acesso se aplica.
+
+O diagrama a seguir mostra a relação entre funções e escopos. Um  grupo de gerenciamento, uma assinatura ou um grupo de recursos pode  receber a função de proprietário, passando a ter maior controle e  autoridade. Um observador, que não deve fazer atualizações, pode receber uma função de Leitor para o mesmo escopo, permitindo que ele examine ou observe o grupo de gerenciamento, a assinatura ou o grupo de recursos.
+
+​                            ![Um diagrama mostrando escopos e funções. As combinações de função e escopo são mapeadas para um tipo específico de usuário ou conta, como um observador ou um administrador.](https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/role-based-access-scope-4b12a8f3-7f40fc55.png)                                        
+
+Os escopos incluem:
+
+- Um grupo de gerenciamento (uma coleção de várias assinaturas).
+- Uma assinatura única.
+- Um grupo de recursos.
+- Um recurso individual.
+
+Observadores, usuários que gerenciam recursos, administradores e  processos automatizados ilustram os tipos de usuários ou contas que  normalmente são atribuídos a cada uma das várias funções.
+
+O RBAC do Azure é hierárquico, porque quando você permite acesso a um escopo pai, essas permissões são herdadas por todos os escopos filho.  Por exemplo:
+
+- Quando você atribui a função Proprietário a um usuário no escopo do  grupo de gerenciamento, esse usuário pode gerenciar tudo em todas as  assinaturas dentro do grupo de gerenciamento.
+- Quando você atribui a função Leitor a um grupo no escopo da  assinatura, os membros desse grupo podem ver todos os grupos de recursos e os recursos na assinatura.
+
+## Como o RBAC do Azure é imposto?
+
+O RBAC do Azure é imposto em qualquer ação iniciada em um recurso do  Azure que passa pelo Azure Resource Manager. O Resource Manager é um  serviço de gerenciamento que fornece um modo de organizar e proteger  seus recursos de nuvem.
+
+Normalmente, você acessa o Resource Manager no portal do Azure, no  Azure Cloud Shell, no Azure PowerShell e na CLI do Azure. O RBAC do  Azure não impõe permissões de acesso no nível do aplicativo nem dos  dados. A segurança do aplicativo precisa ser realizada pelo aplicativo.
+
+O RBAC do Azure usa um modelo de permissão. Quando você recebe uma  função, o RBAC do Azure permite que você execute ações dentro do escopo  dessa função. Se uma atribuição de função conceder a você permissões de  leitura em um grupo de recursos e outra atribuição de função conceder a  você permissões de gravação no mesmo grupo de recursos, você terá  permissões de gravação e leitura nesse grupo de recursos.
