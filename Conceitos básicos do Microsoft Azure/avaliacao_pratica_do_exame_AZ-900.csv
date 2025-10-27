@@ -1,3 +1,4 @@
-data,pontuacao_geral
-22/10/2025,"0,82"
-25/10/2025,"0,88"
+data,pontuacao_geral,conceitos_nevem,arquitetura_servicos,gerenciamento_governanca
+22/10/2025,"0,82",1,1,0
+25/10/2025,"0,88",1,1,0
+27/10/2025,"0,94",1,1,1
